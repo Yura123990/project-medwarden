@@ -16,13 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link> --}}
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
+                        {{ __('Домашня сторінка') }}
                     </x-nav-link>
-                    <div class="relative inline-block">
+                    <div class="relative inline-block mt-6">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
-                                <button class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-900 focus:border-gray-300 transition duration-150 ease-in-out">
-                                    <div>{{ __('Dropdown') }}</div>
+                                <button class="flex items-center text-sm font-medium text-black-700 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-900 focus:border-gray-300 transition duration-150 ease-in-out">
+                                    <div>{{ __('Діагностика') }}</div>
                     
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-4-4h8l-4 4z"/></svg>
@@ -32,19 +32,22 @@
                     
                             <x-slot name="content">
                                 <!-- Dropdown items -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Dropdown header') }}
+                                <div class="block px-4 py-2 text-xs text-gray-700">
+                                    {{ __('Виберіть категорію') }}
                                 </div>
-                                <x-dropdown-link href="#">
-                                    {{ __('Link 1') }}
+                                <x-dropdown-link href="{{ route('viral') }}">
+                                    {{ __('Вірусні захворювання') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link href="#">
-                                    {{ __('Link 2') }}
+                                    {{ __('Гастроентерологічні захворювання') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
                     </div>
-                    
+                    <x-nav-link href="{{ route('chat') }}" :active="request()->routeIs('chat')">
+                        {{ __("Зв'язатися із лікарем") }}
+                    </x-nav-link>
+                                    
                 </div>
             </div>
 

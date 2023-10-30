@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/users', 'App\Http\Livewire\Chat\CreateChat'::class)->name('users');
+Route::get('/chat{key?}', 'App\Http\Livewire\Chat\Main'::class)->name('chat');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -24,4 +27,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::get('/home', function () {return view('home');})->name('home');
+    Route::get('/viral', function () {return view('diagnostics.viral');})->name('viral');
 });
